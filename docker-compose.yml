@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  kicad6:
+    build:
+      context: .
+      dockerfile: dockerfile
+      args:
+        UID: 1000
+        GID: 1000
+        USER_NAME: $USER
+        HOME: $HOME
+    image: docker.wot.lv/kicad6
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /usr/share/kicad:/usr/share/kicad
+      - $HOME:$HOME
+    environment:
+      - DISPLAY=$DISPLAY
