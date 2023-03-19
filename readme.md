@@ -76,3 +76,11 @@ For convenience, you can alias this command in your `.bashrc` file like so:
 DCKR_X11="docker run --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /usr/share/kicad:/usr/share/kicad -v $HOME:$HOME"
 alias kicad6="$DCKR_X11 kicad6"
 ```
+
+# Using docker-compose
+
+Keep in mind that the built image can only be used on the same computer (current username is used in building the image)
+```shellsession
+docker-compose build # builds the image
+docker-compose up # runs the image
+```
